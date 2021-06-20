@@ -1,4 +1,4 @@
-import reactDom from "react-dom";
+
 import "../styles/App.scss";
 import { useState, useEffect } from "react";
 import firebase from '../config/firebase'
@@ -13,26 +13,51 @@ function App() {
   
   const [titleInput, setTitleInput] = useState("");
 
+  const [categoryInput, setCategoryInput] = useState("");
+
   const [blogContentInput, setBlogContentInput] = useState("");
   
   const [displayPost, setDisplayPost] = useState(false);
 
-  // useEffect(() => {
-
-    // blogRef.on('value', (response) => {
-    //   const blogPostInfo = response.val()
-    // })
-  //   console.log("Use Effect has been run")
+  const [blogPosts, setBlogPosts] = useState([]);
 
 
-  // }, [someNumber])
+
+
+  useEffect(() => {
+
+    const blogRef = firebase.database().ref();
+
+    blogRef.on('value', (response) => {
+      const blogPostInfo = response.val()
+
+      console.log(blogPostInfo);
+
+      const allBlogPosts = []
+
+      for (let key in blogPostInfo) {
+        allBlogPosts.push({
+          key: key,
+          name: blogPostInfo[key]
+        })
+      }
+
+      console.log(allBlogPosts);
+
+      setBlogPosts(allBlogPosts);
+
+
+    })
+
+
+  }, [])
 
 
   // HandleSubmit for the form
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setDisplayPost(true)
+    setDisplayPost(true);
 
     // Firebase Code
 
@@ -43,11 +68,13 @@ function App() {
     blogPostInfo.push({
       name: nameInput,
       title: titleInput,
+      category: categoryInput,
       content: blogContentInput
     })
 
     setNameInput("");
     setTitleInput("");
+    setCategoryInput("");
     setBlogContentInput("");
 
   };
@@ -61,13 +88,26 @@ function App() {
       </header>
 
       <section className="blogPostDisplay">
-
         <h2>Recent BLOG Posts</h2>
 
-          {displayPost ? <div>{nameInput}{titleInput}{blogContentInput}</div> : null}
-
+        {/* {displayPost ? <div>{nameInput}{titleInput}{blogContentInput}</div> : null} */}
+        <div className="blogPostContainer">
+          <ul>
+            {blogPosts.map((post) => {
+              return (
+                <li key={post.key}>
+                  <div>
+                    <h3>{post.name.title}</h3>
+                  </div>
+                  <div>Author: {post.name.name}</div>
+                  <div>Category: {post.name.category}</div>
+                  <div>{post.name.content}</div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </section>
-      
 
       <section className="blogPostComment">
         <form action="submit" onSubmit={handleSubmit}>
@@ -91,6 +131,28 @@ function App() {
             value={titleInput}
           ></input>
 
+          <label htmlFor="blogPostCategory" className="srOnly">
+            Category
+          </label>
+          <select
+            name="blogPostCategory"
+            onChange={(event) => {
+              setCategoryInput(event.target.value);
+            }}
+            value={categoryInput}
+          >
+            {/* <option value="noInput" disabled>
+              Select Category </option> */}
+            <option value="General Knowledge">General Knowledge</option>
+            <option value="Training Tools">Training Tools</option>
+            <option value="Problem Behaviour">Problem Behaviour</option>
+            <option value="Training Tips">Training Tips</option>
+            <option value="Strange Stories">Strange Stories</option>
+            <option value="Success Stories">Success Stories</option>
+            <option value="Dog Packs">Dog Packs</option>
+            <option value="FAQ">FAQ</option>
+          </select>
+
           <label htmlFor="blogPostContent">Your Post</label>
           <textarea
             type="text"
@@ -102,8 +164,7 @@ function App() {
             value={blogContentInput}
           ></textarea>
 
-            <button type="submit">Post your story!</button>
-
+          <button type="submit">Post your story!</button>
         </form>
       </section>
       {/* <form action="#" method="#" id="contact-form" class="contact-form" name="contact-form">
