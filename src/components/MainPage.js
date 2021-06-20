@@ -72,93 +72,117 @@ const MainPage = () => {
   return (
     <div>
       <header>
-        <h1>K9PAWS</h1>
+        <div className="headerTitle wrapper">
+          <h1>Lets Discuss Dogs!</h1>
+          <h2>Dog Behaviour BLOG</h2>
+        </div>
       </header>
 
       <section className="blogPostDisplay">
-        <Link to={`/blog`}>
-          <div>
-            <h2>Recent BLOG Posts</h2>
-          </div>
-        </Link>
+        <div className="postDisplayContainer wrapper">
+          <Link to={`/blog`}>
+            <div>
+              <h2>Recent BLOG Posts</h2>
+            </div>
+          </Link>
 
-        {/* {displayPost ? <div>{nameInput}{titleInput}{blogContentInput}</div> : null} */}
-        <div className="blogPostContainer">
-          <ul>
-            {recentPosts.map((post) => {
-              return (
-                <li key={post.key}>
-                  <div>
-                    <h3>{post.name.title}</h3>
+          {/* {displayPost ? <div>{nameInput}{titleInput}{blogContentInput}</div> : null} */}
+          <div className="blogPostContainer wrapper">
+            <ul>
+              {recentPosts.map((post) => {
+                return (
+                  <div className="blogPreviewCard">
+                    <li key={post.key}>
+                      <div>
+                        <h3>{post.name.title}</h3>
+                      </div>
+                      <div>
+                        <strong>Author:</strong> {post.name.name}
+                      </div>
+                      <div>
+                        <strong>Category:</strong> {post.name.category}
+                      </div>
+                      <div className="postComment">{post.name.content}</div>
+                    </li>
                   </div>
-                  <div>Author: {post.name.name}</div>
-                  <div>Category: {post.name.category}</div>
-                  <div>{post.name.content}</div>
-                </li>
-              );
-            })}
-          </ul>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </section>
 
       <section className="blogPostComment">
-        <form action="submit" onSubmit={handleSubmit}>
-          <h2>Dog BLOG</h2>
+        <div className="wrapper">
+          <div class="blogForm">
+            <form action="submit" onSubmit={handleSubmit}>
+              <h2>Create a New Post</h2>
 
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            onChange={(event) => {
-              setNameInput(event.target.value);
-            }}
-            value={nameInput}
-          ></input>
+              <label htmlFor="name"></label>
+              <input
+                type="text"
+                onChange={(event) => {
+                  setNameInput(event.target.value);
+                }}
+                value={nameInput}
+                placeholder="Name"
+              ></input>
 
-          <label htmlFor="blogPostTitle">BLOG Post Title</label>
-          <input
-            type="text"
-            onChange={(event) => {
-              setTitleInput(event.target.value);
-            }}
-            value={titleInput}
-          ></input>
+              <label htmlFor="blogPostTitle"></label>
+              <input
+                type="text"
+                onChange={(event) => {
+                  setTitleInput(event.target.value);
+                }}
+                value={titleInput}
+                placeholder="BLOG Post Title"
+              ></input>
 
-          <label htmlFor="blogPostCategory" className="srOnly">
-            Category
-          </label>
-          <select
-            name="blogPostCategory"
-            onChange={(event) => {
-              setCategoryInput(event.target.value);
-            }}
-            value={categoryInput}
-          >
-            {/* <option value="noInput" disabled>
+              <label htmlFor="blogPostCategory" className="srOnly"></label>
+              <select
+                name="blogPostCategory"
+                onChange={(event) => {
+                  setCategoryInput(event.target.value);
+                }}
+                value={categoryInput}
+              >
+                {/* <option value="noInput" disabled>
               Select Category </option> */}
-            <option value="General Knowledge">General Knowledge</option>
-            <option value="Training Tools">Training Tools</option>
-            <option value="Problem Behaviour">Problem Behaviour</option>
-            <option value="Training Tips">Training Tips</option>
-            <option value="Strange Stories">Strange Stories</option>
-            <option value="Success Stories">Success Stories</option>
-            <option value="Dog Packs">Dog Packs</option>
-            <option value="FAQ">FAQ</option>
-          </select>
+                <option value="General Knowledge">General Knowledge</option>
+                <option value="Training Tools">Training Tools</option>
+                <option value="Problem Behaviour">Problem Behaviour</option>
+                <option value="Training Tips">Training Tips</option>
+                <option value="Breeds">Breeds</option>
+                <option value="Puppies">Puppies</option>
+                <option value="Strange Stories">Strange Stories</option>
+                <option value="Success Stories">Success Stories</option>
+                <option value="Dog Packs">Dog Packs</option>
+                <option value="FAQ">FAQ</option>
+              </select>
 
-          <label htmlFor="blogPostContent">Your Post</label>
-          <textarea
-            type="text"
-            cols="40"
-            rows="20"
-            onChange={(event) => {
-              setBlogContentInput(event.target.value);
-            }}
-            value={blogContentInput}
-          ></textarea>
+              <label htmlFor="blogPostContent"></label>
+              <textarea
+                type="text"
+                cols="40"
+                rows="20"
+                onChange={(event) => {
+                  setBlogContentInput(event.target.value);
+                }}
+                value={blogContentInput}
+                placeholder="Tell us your story!"
+              ></textarea>
 
-          <button type="submit">Post your story!</button>
-        </form>
+              <button type="submit">Post your story!</button>
+            </form>
+          </div>
+        </div>
       </section>
+
+      <footer>
+        <div class="footer wrapper">
+          <h5>Copyright 2021 K9PAWS</h5>
+        </div>
+      </footer>
     </div>
   );
 };
