@@ -1,6 +1,10 @@
 import reactDom from "react-dom";
 import "../styles/App.scss";
 import { useState, useEffect } from "react";
+import firebase from '../config/firebase'
+
+
+
 function App() {
 
 
@@ -15,6 +19,9 @@ function App() {
 
   // useEffect(() => {
 
+    // blogRef.on('value', (response) => {
+    //   const blogPostInfo = response.val()
+    // })
   //   console.log("Use Effect has been run")
 
 
@@ -29,7 +36,19 @@ function App() {
 
     // Firebase Code
 
-    
+    const blogRef = firebase.database().ref();
+
+    const blogPostInfo = blogRef;
+
+    blogPostInfo.push({
+      name: nameInput,
+      title: titleInput,
+      content: blogContentInput
+    })
+
+    setNameInput("");
+    setTitleInput("");
+    setBlogContentInput("");
 
   };
 
