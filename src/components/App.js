@@ -21,6 +21,8 @@ function App() {
 
   const [blogPosts, setBlogPosts] = useState([]);
 
+  const [recentPosts, setRecentPosts] = useState([]);
+
 
 
 
@@ -33,10 +35,12 @@ function App() {
 
       console.log(blogPostInfo);
 
+
+
       const allBlogPosts = []
 
       for (let key in blogPostInfo) {
-        allBlogPosts.push({
+        allBlogPosts.unshift({
           key: key,
           name: blogPostInfo[key]
         })
@@ -45,6 +49,10 @@ function App() {
       console.log(allBlogPosts);
 
       setBlogPosts(allBlogPosts);
+
+      const mostRecentPosts = allBlogPosts.slice(0,3);
+
+      setRecentPosts(mostRecentPosts);
 
 
     })
@@ -93,7 +101,7 @@ function App() {
         {/* {displayPost ? <div>{nameInput}{titleInput}{blogContentInput}</div> : null} */}
         <div className="blogPostContainer">
           <ul>
-            {blogPosts.map((post) => {
+            {recentPosts.map((post) => {
               return (
                 <li key={post.key}>
                   <div>

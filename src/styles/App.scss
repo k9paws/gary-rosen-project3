@@ -14,3 +14,18 @@ section {
 h1 {
     text-align: center;
 }
+
+.blogPostContainer {
+    width: 95vw;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+
+        li {
+            margin: 15px;
+            border: 1px solid red;
+        }
+    }
+}
