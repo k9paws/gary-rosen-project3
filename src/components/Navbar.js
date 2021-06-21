@@ -1,16 +1,18 @@
 import { Route, Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = () => {
 
-  const { postNum } = useParams();
+  let location = useLocation();
 
-  const [postCheck, setPostCheck] = useState()
+  const [postCheck, setPostCheck] = useState();
 
-  console.log(postNum);
+//   console.log(postNum);
 
-  setPostCheck(postNum)
+  console.log(location)
+
+  const urlLink = location.pathname
 
   return (
     <div>
@@ -25,13 +27,18 @@ const Navbar = () => {
               <Link to={`/blog`}>
                 <li>All Posts</li>
               </Link>
+
+              {/\d/.test(urlLink) ? null : 
               <li>
                 <a href="#postForm">
                   <span>NEW POST</span>
                 </a>
               </li>
+                }
             </ul>
+          {/* {postNum} */}
           </div>
+          
           <div className="navRight">
             <label htmlFor="navSearchBar"></label>
             <input type="text" placeholder="Search Blog Posts"></input>

@@ -1,7 +1,7 @@
 
 import "../styles/App.scss";
 import MainPage from './MainPage';
-import { Route , Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import BlogPosts from './BlogPosts';
 import NavBar from './Navbar';
 import BlogPost from './BlogPost';
