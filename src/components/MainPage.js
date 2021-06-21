@@ -7,7 +7,7 @@ const MainPage = () => {
 
   const [titleInput, setTitleInput] = useState("");
 
-  const [categoryInput, setCategoryInput] = useState("");
+  const [categoryInput, setCategoryInput] = useState("General Knowledge");
 
   const [blogContentInput, setBlogContentInput] = useState("");
 
@@ -56,11 +56,15 @@ const MainPage = () => {
 
     const blogPostInfo = blogRef;
 
+    console.log(blogRef)
+
+
     blogPostInfo.push({
       name: nameInput,
       title: titleInput,
       category: categoryInput,
       content: blogContentInput,
+      urlLink: `post${(blogPosts.length + 1)}`
     });
 
     setNameInput("");
@@ -86,25 +90,26 @@ const MainPage = () => {
             </div>
           </Link>
 
-          {/* {displayPost ? <div>{nameInput}{titleInput}{blogContentInput}</div> : null} */}
           <div className="blogPostContainer wrapper">
             <ul>
               {recentPosts.map((post) => {
                 return (
-                  <div className="blogPreviewCard">
+                  <Link to={`/blog/${post.name.urlLink}`}>
                     <li key={post.key}>
-                      <div>
-                        <h3>{post.name.title}</h3>
+                      <div className="blogPreviewCard">
+                        <div>
+                          <h3>{post.name.title}</h3>
+                        </div>
+                        <div>
+                          <strong>Author:</strong> {post.name.name}
+                        </div>
+                        <div>
+                          <strong>Category:</strong> {post.name.category}
+                        </div>
+                        <div className="postComment">{post.name.content}</div>
                       </div>
-                      <div>
-                        <strong>Author:</strong> {post.name.name}
-                      </div>
-                      <div>
-                        <strong>Category:</strong> {post.name.category}
-                      </div>
-                      <div className="postComment">{post.name.content}</div>
                     </li>
-                  </div>
+                  </Link>
                 );
               })}
             </ul>
@@ -112,9 +117,9 @@ const MainPage = () => {
         </div>
       </section>
 
-      <section className="blogPostComment">
+      <section className="blogPostComment" id="postForm">
         <div className="wrapper">
-          <div class="blogForm">
+          <div className="blogForm"> 
             <form action="submit" onSubmit={handleSubmit}>
               <h2>Create a New Post</h2>
 
@@ -125,7 +130,7 @@ const MainPage = () => {
                   setNameInput(event.target.value);
                 }}
                 value={nameInput}
-                placeholder="Name"
+                placeholder="Name" required
               ></input>
 
               <label htmlFor="blogPostTitle"></label>
@@ -135,7 +140,7 @@ const MainPage = () => {
                   setTitleInput(event.target.value);
                 }}
                 value={titleInput}
-                placeholder="BLOG Post Title"
+                placeholder="BLOG Post Title" required
               ></input>
 
               <label htmlFor="blogPostCategory" className="srOnly"></label>
@@ -169,7 +174,7 @@ const MainPage = () => {
                   setBlogContentInput(event.target.value);
                 }}
                 value={blogContentInput}
-                placeholder="Tell us your story!"
+                placeholder="Tell us your story!" required
               ></textarea>
 
               <button type="submit">Post your story!</button>
@@ -179,7 +184,7 @@ const MainPage = () => {
       </section>
 
       <footer>
-        <div class="footer wrapper">
+        <div className="footer wrapper">
           <h5>Copyright 2021 K9PAWS</h5>
         </div>
       </footer>

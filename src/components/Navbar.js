@@ -1,6 +1,17 @@
 import { Route, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+
+  const { postNum } = useParams();
+
+  const [postCheck, setPostCheck] = useState()
+
+  console.log(postNum);
+
+  setPostCheck(postNum)
+
   return (
     <div>
       <nav>
@@ -11,9 +22,13 @@ const Navbar = () => {
               <Link to={`/`}>
                 <li>Home</li>
               </Link>
-              <li>All Posts</li>
+              <Link to={`/blog`}>
+                <li>All Posts</li>
+              </Link>
               <li>
-                <span>NEW POST</span>
+                <a href="#postForm">
+                  <span>NEW POST</span>
+                </a>
               </li>
             </ul>
           </div>
