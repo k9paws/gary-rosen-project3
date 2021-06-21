@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import firebase from "../config/firebase";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
   const [nameInput, setNameInput] = useState("");
