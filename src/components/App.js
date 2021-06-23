@@ -9,11 +9,11 @@ import Footer from "./Footer";
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <Route path="/" render={() => <NavBar />} />
       <Route exact path="/blog" render={() => <BlogPosts />} />
       <Route exact path="/blog/:postNum" render={() => <BlogPost />} />
       <Route exact path="/" render={() => <MainPage />} />
-      <Footer />
+      <Route path="/" render={() => <Footer />} />
     </div>
   );
 }
