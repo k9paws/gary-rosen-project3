@@ -13,7 +13,7 @@ const BlogPost = () => {
     blogRef.on("value", (response) => {
       const blogPostInfo = response.val();
 
-      console.log(blogPostInfo);
+      // console.log(blogPostInfo);
 
       const allBlogPosts = [];
 
@@ -24,7 +24,7 @@ const BlogPost = () => {
         });
       }
 
-      console.log(allBlogPosts);
+      // console.log(allBlogPosts);
 
       const result = allBlogPosts.filter((post) => {
         if (post.name.urlLink === postNum) {
@@ -34,13 +34,13 @@ const BlogPost = () => {
         }
       });
 
-      console.log(result);
+      // console.log(result);
 
-      console.log(result[0].name);
+      // console.log(result[0].name);
 
       setBlogPost(result[0].name);
     });
-  }, []);
+  }, [postNum]);
 
   return (
     <div>

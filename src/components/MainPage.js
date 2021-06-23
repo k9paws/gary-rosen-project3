@@ -11,8 +11,6 @@ const MainPage = () => {
 
   const [blogContentInput, setBlogContentInput] = useState("");
 
-  const [displayPost, setDisplayPost] = useState(false);
-
   const [blogPosts, setBlogPosts] = useState([]);
 
   const [recentPosts, setRecentPosts] = useState([]);
@@ -23,7 +21,7 @@ const MainPage = () => {
     blogRef.on("value", (response) => {
       const blogPostInfo = response.val();
 
-      console.log(blogPostInfo);
+      // console.log(blogPostInfo);
 
       const allBlogPosts = [];
 
@@ -34,7 +32,7 @@ const MainPage = () => {
         });
       }
 
-      console.log(allBlogPosts);
+      // console.log(allBlogPosts);
 
       setBlogPosts(allBlogPosts);
 
@@ -48,7 +46,6 @@ const MainPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setDisplayPost(true);
 
     // Firebase Code
 
@@ -56,7 +53,7 @@ const MainPage = () => {
 
     const blogPostInfo = blogRef;
 
-    console.log(blogRef)
+    // console.log(blogRef)
 
 
     blogPostInfo.push({
