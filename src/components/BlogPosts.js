@@ -2,22 +2,16 @@ import { useState, useEffect } from "react";
 import firebase from "../config/firebase";
 import { Link } from "react-router-dom";
 
-
 const BlogPosts = () => {
-
-
   const [blogPosts, setBlogPosts] = useState([]);
 
   const [categoryInput, setCategoryInput] = useState("");
-
 
   useEffect(() => {
     const blogRef = firebase.database().ref();
 
     blogRef.on("value", (response) => {
       const blogPostInfo = response.val();
-
-      console.log(blogPostInfo);
 
       const allBlogPosts = [];
 
@@ -28,10 +22,7 @@ const BlogPosts = () => {
         });
       }
 
-      console.log(allBlogPosts);
-
       setBlogPosts(allBlogPosts);
-
     });
   }, []);
 
@@ -56,8 +47,6 @@ const BlogPosts = () => {
             value={categoryInput}
             className="categorySelectMenu"
           >
-            {/* <option value="noInput" disabled>
-              Select Category </option> */}
             <option value="">All Categories</option>
             <option value="General Knowledge">General Knowledge</option>
             <option value="Training Tools">Training Tools</option>
@@ -98,8 +87,6 @@ const BlogPosts = () => {
           </ul>
         </div>
       </section>
-
-      
 
       <footer>
         <div className="footer wrapper">

@@ -21,8 +21,6 @@ const MainPage = () => {
     blogRef.on("value", (response) => {
       const blogPostInfo = response.val();
 
-      // console.log(blogPostInfo);
-
       const allBlogPosts = [];
 
       for (let key in blogPostInfo) {
@@ -31,8 +29,6 @@ const MainPage = () => {
           name: blogPostInfo[key],
         });
       }
-
-      // console.log(allBlogPosts);
 
       setBlogPosts(allBlogPosts);
 
@@ -46,22 +42,17 @@ const MainPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-
     // Firebase Code
-
     const blogRef = firebase.database().ref();
 
     const blogPostInfo = blogRef;
-
-    // console.log(blogRef)
-
 
     blogPostInfo.push({
       name: nameInput,
       title: titleInput,
       category: categoryInput,
       content: blogContentInput,
-      urlLink: `post${(blogPosts.length + 1)}`
+      urlLink: `post${blogPosts.length + 1}`,
     });
 
     setNameInput("");
@@ -81,9 +72,9 @@ const MainPage = () => {
 
       <section className="blogPostDisplay">
         <div className="postDisplayContainer wrapper">
-            <div>
-              <h2>Recent BLOG Posts</h2>
-            </div>
+          <div>
+            <h2>Recent BLOG Posts</h2>
+          </div>
 
           <div className="blogPostContainer wrapper">
             <ul>
@@ -113,7 +104,7 @@ const MainPage = () => {
 
       <section className="blogPostComment" id="postForm">
         <div className="wrapper">
-          <div className="blogForm"> 
+          <div className="blogForm">
             <form action="submit" onSubmit={handleSubmit}>
               <h2>Create a New Post</h2>
 
@@ -124,7 +115,8 @@ const MainPage = () => {
                   setNameInput(event.target.value);
                 }}
                 value={nameInput}
-                placeholder="Name" required
+                placeholder="Name"
+                required
               ></input>
 
               <label htmlFor="blogPostTitle"></label>
@@ -134,7 +126,8 @@ const MainPage = () => {
                   setTitleInput(event.target.value);
                 }}
                 value={titleInput}
-                placeholder="BLOG Post Title" required
+                placeholder="BLOG Post Title"
+                required
               ></input>
 
               <label htmlFor="blogPostCategory" className="srOnly"></label>
@@ -145,8 +138,6 @@ const MainPage = () => {
                 }}
                 value={categoryInput}
               >
-                {/* <option value="noInput" disabled>
-              Select Category </option> */}
                 <option value="General Knowledge">General Knowledge</option>
                 <option value="Training Tools">Training Tools</option>
                 <option value="Problem Behaviour">Problem Behaviour</option>
@@ -168,7 +159,8 @@ const MainPage = () => {
                   setBlogContentInput(event.target.value);
                 }}
                 value={blogContentInput}
-                placeholder="Tell us your story!" required
+                placeholder="Tell us your story!"
+                required
               ></textarea>
 
               <button type="submit">Post your story!</button>
