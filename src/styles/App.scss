@@ -115,6 +115,12 @@ h5 {
     font-family: 'Montserrat', sans-serif;
 }
 
+p {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    text-align: justify;
+}
+
 .headerTitle {
     display: flex;
     flex-direction: column;
@@ -302,4 +308,37 @@ footer {
     align-items: center;
     background: #2B6777;
     color: #c8d8e4;
+}
+
+// BLOG FULL POST STYLING
+
+
+.blogFullPostDisplay {
+    display: flex;
+    flex-direction: column;
+        width: 75%;
+        border: 1.5px solid black;
+        padding: 50px;
+        margin: 70px auto;
+            box-shadow: 10px 10px 20px 20px #aaaaaa;
+    // align-items: center;
+
+    h2 {
+        font-size: 3rem;
+        padding: 80px 0 50px 0;
+    }
+
+    h3 {
+        text-align: left;
+        font-size: 1.5rem;
+        padding-bottom: 50px;
+    }
+
+    p {
+
+    }
+}
+
+.blogFullPostDiv {
+    margin: 0 auto;
 }

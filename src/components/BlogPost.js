@@ -3,11 +3,9 @@ import firebase from "../config/firebase";
 import { useParams } from "react-router-dom";
 
 const BlogPost = () => {
-
-
   const [blogPost, setBlogPost] = useState([]);
 
-  const {postNum} = useParams();
+  const { postNum } = useParams();
 
   useEffect(() => {
     const blogRef = firebase.database().ref();
@@ -28,34 +26,45 @@ const BlogPost = () => {
 
       console.log(allBlogPosts);
 
-        const result = allBlogPosts.filter((post) => {
-          if (post.name.urlLink === postNum) {
-              return true
-          } else {
-              return false
-          }
+      const result = allBlogPosts.filter((post) => {
+        if (post.name.urlLink === postNum) {
+          return true;
+        } else {
+          return false;
+        }
       });
 
       console.log(result);
 
-    
-      console.log(result[0].name)
+      console.log(result[0].name);
 
       setBlogPost(result[0].name);
     });
   }, []);
 
-
   return (
     <div>
-      <h1>Blah</h1>
+      <header>
+        <div className="headerTitle wrapper">
+          <h1>Lets Discuss Dogs!</h1>
+          <h2>{blogPost.category} POST</h2>
+        </div>
+      </header>
 
-      {blogPost.title}
-      {blogPost.name}
-      {blogPost.category}
-      {blogPost.content}
+      <section className="blogFullPostDisplay wrapper">
+        <h2>{blogPost.title}</h2>
 
-      
+        <h3>Author: {blogPost.name}</h3>
+        <div className="blogFullPostDiv">
+          <p>{blogPost.content}</p>
+        </div>
+      </section>
+
+      <footer>
+        <div className="footer wrapper">
+          <h5>Copyright 2021 K9PAWS</h5>
+        </div>
+      </footer>
     </div>
   );
 };

@@ -106,7 +106,6 @@ const MainPage = () => {
                         <div>
                           <strong>Category:</strong> {post.name.category}
                         </div>
-                        <div className="postComment">{post.name.content}</div>
                       </div>
                     </li>
                   </Link>
