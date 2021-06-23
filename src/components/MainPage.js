@@ -11,7 +11,7 @@ const MainPage = () => {
 
   const [blogContentInput, setBlogContentInput] = useState("");
 
-  const [displayPost, setDisplayPost] = useState(false);
+  // const [displayPost, setDisplayPost] = useState(false);
 
   const [blogPosts, setBlogPosts] = useState([]);
 
@@ -48,7 +48,7 @@ const MainPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setDisplayPost(true);
+    // setDisplayPost(true);
 
     // Firebase Code
 
