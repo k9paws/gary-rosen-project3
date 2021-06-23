@@ -48,7 +48,7 @@ const BlogPost = () => {
 
         <h3>Author: {blogPost.name}</h3>
         <div className="blogFullPostDiv">
-          <p>{blogPost.content}</p>
+          <p dangerouslySetInnerHTML={{__html: blogPost.content ? blogPost.content.replace(/\n/g, "<br />") : null }} />
         </div>
       </section>
 
