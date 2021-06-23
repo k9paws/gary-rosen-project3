@@ -26,6 +26,8 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 nav {
     background: #2B6777;
         font-family: 'Montserrat', sans-serif;
+        position: fixed;
+        width: 100%;
 
         ul {
             display: flex;
@@ -34,9 +36,31 @@ nav {
         list-style: none;
         text-transform: uppercase;
         font-weight: 600;
+                a {
+                    display: flex;
+        align-items: center;
+        justify-content: center;
+            height: 50px;
+            
+            li {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+
+        a:visited {
+        color: white;
+    }
+    a:hover {
+        color: #ed7966;
+        background: #52ab98;
+                    padding: auto;
+            // width: 100%;
+        }
         
             li {
-                padding: 0 30px;
+                padding: 0 10px;
                 letter-spacing: 1.5px;
             
             }
@@ -49,11 +73,18 @@ nav {
     height: 50px;
     color: #F2F2F2;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+
 
     span {
         font-weight: 800;
+        width: 150px;
+        text-align: center;
         color: #ed7966;
+    }
+
+    span:hover {
+        color: white;
     }
 }
 
@@ -154,12 +185,28 @@ ul {
     }
 }
 
+.blogPostSection {
+        background: url(../assets/blogFormImage3.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 50px;
+
+}
+
 .blogPostContainer {
-    width: 100%;
+    width: 80%;
     display: flex;
+    flex-direction: column;
+    background: #f2f2f2;
     // justify-content: space-around;
-    padding-bottom: 50px;
+    padding: 80px 50px;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 3px solid black;
     
+    h2 {
+        text-align: center;
+    }
     
     ul {
         display: flex;
@@ -176,6 +223,7 @@ ul {
     }
 }
 
+
 .blogPreviewCard {
        font-family: 'Montserrat', sans-serif;
                    background:#c8d8e4;
@@ -184,13 +232,16 @@ ul {
             justify-content: center;
             align-items: center;
             margin: 30px;
-            // border: 2px solid black;
+            border: 1px solid black;
+            text-align: center;
                 height: 280px;
     width: 250px;
     border-radius: 20px;
     box-shadow: 5px 5px 5px 5px #aaaaaa;
     //    font-weight: 400;
-    padding: 15px;
+    padding: 20px;
+    
+
 
     h3 {
         padding-bottom: 30px;
@@ -341,4 +392,12 @@ footer {
 
 .blogFullPostDiv {
     margin: 0 auto;
+}
+
+// BLOG Posts Styling
+
+.categorySelectMenu {
+    width: 30%;
+    text-align: center;
+    margin: 40px auto;
 }

@@ -6,7 +6,7 @@ const Navbar = () => {
 
   let location = useLocation();
 
-  const [postCheck, setPostCheck] = useState();
+  // const [postCheck, setPostCheck] = useState();
 
 //   console.log(postNum);
 

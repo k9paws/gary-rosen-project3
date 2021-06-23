@@ -37,57 +37,75 @@ const BlogPosts = () => {
 
   return (
     <div>
-      <div className="blogPostContainer wrapper">
-        <h1>This is the Page the Posts all the Blog Posts</h1>
+      <header>
+        <div className="headerTitle wrapper">
+          <h1>Lets Discuss Dogs!</h1>
+          <h2>ALL Posts</h2>
+        </div>
+      </header>
+      <section className="blogPostSection">
+        <div className="blogPostContainer wrapper">
+          <h2>Search by Category:</h2>
 
-        <label htmlFor="blogPostCategory" className="srOnly"></label>
-        <select
-          name="blogPostCategory"
-          onChange={(event) => {
-            setCategoryInput(event.target.value);
-          }}
-          value={categoryInput}
-        >
-          {/* <option value="noInput" disabled>
+          <label htmlFor="blogPostCategory" className="srOnly"></label>
+          <select
+            name="blogPostCategory"
+            onChange={(event) => {
+              setCategoryInput(event.target.value);
+            }}
+            value={categoryInput}
+            className="categorySelectMenu"
+          >
+            {/* <option value="noInput" disabled>
               Select Category </option> */}
-          <option value="">All Categories</option>
-          <option value="General Knowledge">General Knowledge</option>
-          <option value="Training Tools">Training Tools</option>
-          <option value="Problem Behaviour">Problem Behaviour</option>
-          <option value="Training Tips">Training Tips</option>
-          <option value="Breeds">Breeds</option>
-          <option value="Puppies">Puppies</option>
-          <option value="Strange Stories">Strange Stories</option>
-          <option value="Success Stories">Success Stories</option>
-          <option value="Dog Packs">Dog Packs</option>
-          <option value="FAQ">FAQ</option>
-        </select>
+            <option value="">All Categories</option>
+            <option value="General Knowledge">General Knowledge</option>
+            <option value="Training Tools">Training Tools</option>
+            <option value="Problem Behaviour">Problem Behaviour</option>
+            <option value="Training Tips">Training Tips</option>
+            <option value="Breeds">Breeds</option>
+            <option value="Puppies">Puppies</option>
+            <option value="Strange Stories">Strange Stories</option>
+            <option value="Success Stories">Success Stories</option>
+            <option value="Dog Packs">Dog Packs</option>
+            <option value="FAQ">FAQ</option>
+          </select>
 
-        <ul>
-          {blogPosts.filter((post) => {
-              return post.name.category.includes(categoryInput)
-          }).map((post) => {
-            return (
-              <Link to={`/blog/${post.name.urlLink}`}>
-                <li key={post.key}>
-                  <div className="blogPreviewCard">
-                    <div>
-                      <h3>{post.name.title}</h3>
-                    </div>
-                    <div>
-                      <strong>Author:</strong> {post.name.name}
-                    </div>
-                    <div>
-                      <strong>Category:</strong> {post.name.category}
-                    </div>
-                    <div className="postComment">{post.name.content}</div>
-                  </div>
-                </li>
-              </Link>
-            );
-          })}
-        </ul>
-      </div>
+          <ul>
+            {blogPosts
+              .filter((post) => {
+                return post.name.category.includes(categoryInput);
+              })
+              .map((post) => {
+                return (
+                  <Link to={`/blog/${post.name.urlLink}`}>
+                    <li key={post.key}>
+                      <div className="blogPreviewCard">
+                        <div>
+                          <h3>{post.name.title}</h3>
+                        </div>
+                        <div>
+                          <strong>Author:</strong> {post.name.name}
+                        </div>
+                        <div>
+                          <strong>Category:</strong> {post.name.category}
+                        </div>
+                      </div>
+                    </li>
+                  </Link>
+                );
+              })}
+          </ul>
+        </div>
+      </section>
+
+      
+
+      <footer>
+        <div className="footer wrapper">
+          <h5>Copyright 2021 K9PAWS</h5>
+        </div>
+      </footer>
     </div>
   );
 };
