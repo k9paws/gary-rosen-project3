@@ -40,7 +40,7 @@ const BlogPost = () => {
 
       setBlogPost(result[0].name);
     });
-  }, []);
+  }, [postNum]);
 
   return (
     <div>

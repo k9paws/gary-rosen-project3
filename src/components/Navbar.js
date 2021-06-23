@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+
 
 const Navbar = () => {
 
@@ -10,7 +10,7 @@ const Navbar = () => {
 
 //   console.log(postNum);
 
-  console.log(location)
+  // console.log(location)
 
   const urlLink = location.pathname
 
