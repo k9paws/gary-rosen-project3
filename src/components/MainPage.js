@@ -136,7 +136,7 @@ const MainPage = () => {
                 onChange={(event) => {
                   setCategoryInput(event.target.value);
                 }}
-                value={categoryInput}
+                value={categoryInput} className="postFormDropDown"
               >
                 <option value="General Knowledge">General Knowledge</option>
                 <option value="Training Tools">Training Tools</option>
