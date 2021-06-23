@@ -84,11 +84,9 @@ const MainPage = () => {
 
       <section className="blogPostDisplay">
         <div className="postDisplayContainer wrapper">
-          <Link to={`/blog`}>
             <div>
               <h2>Recent BLOG Posts</h2>
             </div>
-          </Link>
 
           <div className="blogPostContainer wrapper">
             <ul>
