@@ -136,10 +136,9 @@ h5 {
   flex-direction: column;
   background: $primaryColor;
   padding: 50px;
-  // margin: 0 auto;
   border-radius: 20px;
   border: 3px solid black;
-  min-height: 60vh;
+  min-height: 40vh;
   position: relative;
   top: -150px;
 
@@ -221,12 +220,6 @@ padding: 50px 0;
   }
 }
 
-// .postDisplayContainer {
-//   display: flex;
-//   flex-direction: column;
-//   // padding: 30px 0;
-// }
-
 // All BLOG Posts Styling
 
 .categorySelectMenu {
@@ -240,7 +233,6 @@ padding: 50px 0;
 
 .fullPostSection {
   background: #c5c3c3;
-
 }
 
 .blogFullPostDisplay {

@@ -7,8 +7,6 @@ nav {
 
   ul {
     display: flex;
-    // justify-content: flex-start;
-    // align-items: center;
     list-style: none;
     text-transform: uppercase;
     font-weight: 600;
@@ -20,23 +18,16 @@ nav {
       justify-content: center;
       height: 50px;
       text-decoration: none;
-      padding: 0 30px;
+      padding: 0 40px;
       letter-spacing: 1.5px;
-      li {
-        // justify-content: center;
-        // align-items: center;
-      }
-    }
-
-    a:last-child {
-      padding-right: 0;
     }
 
     a:visited {
       color: white;
     }
 
-    a:hover {
+    a:hover,
+    a:focus {
       background: #357b8f;
           transition-duration: 0.3s;
     }
@@ -49,7 +40,6 @@ nav {
   color: $secondaryColor;
   display: flex;
   justify-content: space-between;
-  
 }
 
 .navLeft {
@@ -64,4 +54,6 @@ nav {
 width: 50%;
 display: flex;
 justify-content: flex-end;
+position: relative;
+right: -40px;
 }

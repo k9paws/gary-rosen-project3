@@ -1,14 +1,69 @@
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
 
     header {
         padding: 0 50px;
     }
     nav {
-        padding: 0 10px;
+        padding: 0 40px;
     }
-
 }
 
+@media (max-width: 1024px) {
+
+    header {
+        height: 60vh;
+    }
+
+    .headerTitle {
+        padding-top: 20vh;
+    }
+
+    .navRight {
+        width: 80%;
+    }
+
+    .navLeft {
+        padding-left: 20px;
+    }
+
+    .blogPreviewCard {
+        margin: 10px;
+    }
+
+    .categorySelectMenu {
+        width: 50%;
+    }
+
+        .blogFullPostDisplay {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .headerTitle {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        padding-top: 0;
+    }
+
+    .blogForm {
+        width: 90%;
+    }
+
+    .postFormDropDown, 
+    .formInput {
+        width: 50%;
+
+    }
+    
+    .formTextArea {
+        width: 90%;
+    }
+
+
+}
 
 
 @media (max-width: 480px) {
