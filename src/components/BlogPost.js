@@ -45,22 +45,22 @@ const BlogPost = () => {
         </div>
       </header>
 
-      <section className="blogFullPostDisplay wrapper">
-        <h2>{blogPost.title}</h2>
+      <section className="fullPostSection">
+        <div className="blogFullPostDisplay wrapper">
+          <h2>{blogPost.title}</h2>
 
-        <h3>Author: {blogPost.name}</h3>
-        <div className="blogFullPostDiv">
-          <p
-            dangerouslySetInnerHTML={{
-              __html: blogPost.content
-                ? blogPost.content.replace(/\n/g, "<br />")
-                : null,
-            }}
-          />
+          <h3>Author: {blogPost.name}</h3>
+          <div className="blogFullPostDiv">
+            <p
+              dangerouslySetInnerHTML={{
+                __html: blogPost.content
+                  ? blogPost.content.replace(/\n/g, "<br />")
+                  : null,
+              }}
+            />
+          </div>
         </div>
-        
       </section>
-      
     </div>
   );
 };

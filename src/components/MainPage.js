@@ -39,11 +39,10 @@ const MainPage = () => {
       </header>
 
       <section className="recentPostDisplaySection">
-        <div className="postDisplayContainer wrapper">
 
-          <div className="blogPostContainer">
+          <div className="blogPostContainer wrapper">
           <h2>
-            Recent <span>DOG BLOG</span> Posts
+            Recently Posted Stories:
           </h2>
             <ul>
               {recentPosts.map((post) => {
@@ -67,7 +66,7 @@ const MainPage = () => {
               })}
             </ul>
           </div>
-        </div>
+      
       </section>
     </div>
   );

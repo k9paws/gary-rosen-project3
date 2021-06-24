@@ -117,8 +117,9 @@ h5 {
 // RECENT POSTS SECTION STYLING
 
 .recentPostDisplaySection {
-  background: $secondaryColor;
-  height: 100vh;
+  background: #c5c3c3;
+  // height: 100vh;
+  padding: 50px 0;
 
   h2 {
     text-align: center;
@@ -135,10 +136,12 @@ h5 {
   flex-direction: column;
   background: $primaryColor;
   padding: 50px;
-  margin: 50px auto;
+  // margin: 0 auto;
   border-radius: 20px;
   border: 3px solid black;
   min-height: 60vh;
+  position: relative;
+  top: -150px;
 
   ul {
     display: flex;
@@ -199,6 +202,11 @@ h5 {
   padding: 25px;
 }
 
+.blogPostSection {
+    background: #c5c3c3;
+padding: 50px 0;
+}
+
 .blogPostDisplay {
   display: flex;
   flex-direction: column;
@@ -213,11 +221,11 @@ h5 {
   }
 }
 
-.postDisplayContainer {
-  display: flex;
-  flex-direction: column;
-  // padding: 30px 0;
-}
+// .postDisplayContainer {
+//   display: flex;
+//   flex-direction: column;
+//   // padding: 30px 0;
+// }
 
 // All BLOG Posts Styling
 
@@ -230,6 +238,11 @@ h5 {
 
 // BLOG FULL POST STYLING
 
+.fullPostSection {
+  background: #c5c3c3;
+
+}
+
 .blogFullPostDisplay {
   background: $secondaryColor;
   display: flex;
@@ -238,6 +251,7 @@ h5 {
   border: 2px solid black;
   padding: 50px;
   border-radius: 20px;
+  margin: 0 auto;
   position: relative;
   top: -100px;
   box-shadow: 10px 10px 20px 20px #aaaaaa;
