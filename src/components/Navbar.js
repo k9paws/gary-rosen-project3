@@ -13,20 +13,20 @@ const Navbar = () => {
           <div className="navLeft">
             <ul>
               <h4>K9PAWS</h4>
-              <Link to={`/`}>
+              <Link to={`/`} aria-label="Move to Home Page">
                 <li>Home</li>
               </Link>
-              <Link to={`/blog`}>
+              <Link to={`/blog`} aria-label="Move to Blog Posts Page">
                 <li>All Posts</li>
               </Link>
 
               {/* {/\d/.test(urlLink) ? null : ( */}
 
-                  <Link to={`/form`}>
+              <Link to={`/form`} aria-label="Move to Blog Post Form Page">
                 <li>
-                    <span>NEW POST</span>
+                  <span>NEW POST</span>
                 </li>
-                  </Link>
+              </Link>
               {/* )} */}
             </ul>
           </div>
