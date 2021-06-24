@@ -1,15 +1,13 @@
-
 .blogForm {
   width: 75%;
   margin: 0 auto;
 }
 
 .postFormDropDown {
-    width: 30%;
+  width: 30%;
   height: 40px;
   text-align: center;
   margin: 20px auto;
-
 }
 
 form {
@@ -18,15 +16,14 @@ form {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  // height: 300px;
   justify-content: center;
   align-items: center;
   margin: 40px 0;
 
-    h2 {
+  h2 {
     color: $tertiaryColor;
     padding: 20px 0;
-      text-shadow: 4px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.4);
   }
 
   input {
@@ -42,6 +39,4 @@ form {
     border-radius: 10px;
     padding: 20px;
   }
-
-
 }

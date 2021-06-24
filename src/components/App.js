@@ -1,11 +1,11 @@
 import "../styles/App.scss";
-import MainPage from "./MainPage";
-import { Route } from "react-router-dom";
-import BlogPosts from "./BlogPosts";
 import NavBar from "./Navbar";
+import MainPage from "./MainPage";
+import BlogPosts from "./BlogPosts";
+import FormPage from "./FormPage";
 import BlogPost from "./BlogPost";
 import Footer from "./Footer";
-import FormPage from "./FormPage";
+import { Route } from "react-router-dom";
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
       <Route exact path="/blog" render={() => <BlogPosts />} />
       <Route exact path="/blog/:postNum" render={() => <BlogPost />} />
       <Route exact path="/" render={() => <MainPage />} />
-      <Route path="/" render={() => <Footer />} />
       <Route exact path="/form" render={() => <FormPage />} />
+      <Route path="/" render={() => <Footer />} />
     </div>
   );
 }
