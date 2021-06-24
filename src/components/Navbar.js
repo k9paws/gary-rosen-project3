@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  let location = useLocation();
+  // let location = useLocation();
 
-  const urlLink = location.pathname;
+  // const urlLink = location.pathname;
 
   return (
     <div>
