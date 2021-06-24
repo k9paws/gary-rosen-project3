@@ -96,16 +96,15 @@
               value={categoryInput}
               className="postFormDropDown"
             >
-              <option value="General Knowledge">General Knowledge</option>
+              <option value="General Interest">General Interest</option>
               <option value="Training Tools">Training Tools</option>
-              <option value="Problem Behaviour">Problem Behaviour</option>
               <option value="Training Tips">Training Tips</option>
+              <option value="Problem Behaviour">Problem Behaviour</option>
               <option value="Breeds">Breeds</option>
               <option value="Puppies">Puppies</option>
               <option value="Strange Stories">Strange Stories</option>
               <option value="Success Stories">Success Stories</option>
-              <option value="Dog Packs">Dog Packs</option>
-              <option value="FAQ">FAQ</option>
+              <option value="Fun Stories">Fun Stories</option>
             </select>
     
             <label htmlFor="blogPostContent"></label>
