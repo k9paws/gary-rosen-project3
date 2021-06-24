@@ -1,5 +1,5 @@
   import { useState, useEffect } from "react";
-import firebase from "../config/firebase";
+  import firebase from "../config/firebase";
 
   const FormPage = () => {
 
@@ -12,6 +12,7 @@ import firebase from "../config/firebase";
   const [blogContentInput, setBlogContentInput] = useState("");
 
   const [blogPosts, setBlogPosts] = useState([]);
+
 
   useEffect(() => {
     const blogRef = firebase.database().ref();
@@ -30,9 +31,6 @@ import firebase from "../config/firebase";
 
       setBlogPosts(allBlogPosts);
 
-    //   const mostRecentPosts = allBlogPosts.slice(0, 3);
-
-    //   setRecentPosts(mostRecentPosts);
     });
   }, []);
 
