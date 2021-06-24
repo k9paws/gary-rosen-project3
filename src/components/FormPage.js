@@ -6,7 +6,7 @@ const FormPage = () => {
 
   const [titleInput, setTitleInput] = useState("");
 
-  const [categoryInput, setCategoryInput] = useState("General Knowledge");
+  const [categoryInput, setCategoryInput] = useState("General Interest");
 
   const [blogContentInput, setBlogContentInput] = useState("");
 
