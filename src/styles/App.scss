@@ -30,7 +30,7 @@ button {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 800;
-    transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover {
@@ -38,15 +38,14 @@ button:hover {
   outline: 3px solid #0d457f;
   // color: $primaryColor;
   transition-duration: 0.2s;
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 button:active {
   background-color: #e27d60;
-          box-shadow: 0 5px 4px #000;
-          transform: translateY(2px);
+  box-shadow: 0 5px 4px #000;
+  transform: translateY(2px);
 }
-
 
 .wrapper {
   max-width: 1300px;
@@ -167,6 +166,10 @@ h5 {
 }
 
 // POST PREVIEW CARD STYLING
+.blogPostSection {
+  background: #c5c3c3;
+  padding: 50px 0;
+}
 
 .blogPreviewCard {
   background: $secondaryColor;
@@ -199,11 +202,6 @@ h5 {
 
 .postComment {
   padding: 25px;
-}
-
-.blogPostSection {
-    background: #c5c3c3;
-padding: 50px 0;
 }
 
 .blogPostDisplay {

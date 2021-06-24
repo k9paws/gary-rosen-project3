@@ -29,7 +29,7 @@ nav {
     a:hover,
     a:focus {
       background: #357b8f;
-          transition-duration: 0.3s;
+      transition-duration: 0.3s;
     }
   }
 }
@@ -51,9 +51,9 @@ nav {
 }
 
 .navRight {
-width: 50%;
-display: flex;
-justify-content: flex-end;
-position: relative;
-right: -40px;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: -40px;
 }

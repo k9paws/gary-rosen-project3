@@ -3,7 +3,6 @@ import firebase from "../config/firebase";
 import { Link } from "react-router-dom";
 
 const MainPage = () => {
-
   const [recentPosts, setRecentPosts] = useState([]);
 
   useEffect(() => {
@@ -39,33 +38,30 @@ const MainPage = () => {
       </header>
 
       <section className="recentPostDisplaySection">
-
-          <div className="blogPostContainer wrapper">
-          <h2>
-            Recently Posted Stories:
-          </h2>
-            <ul>
-              {recentPosts.map((post) => {
-                return (
-                  <Link to={`/blog/${post.name.urlLink}`}>
-                    <li key={post.key}>
-                      <div className="blogPreviewCard">
-                        <div>
-                          <h3>{post.name.title}</h3>
-                        </div>
-                        <div>
-                          <strong>Author:</strong> {post.name.name}
-                        </div>
-                        <div>
-                          <strong>Category:</strong> {post.name.category}
-                        </div>
+        <div className="blogPostContainer wrapper">
+          <h2>Recently Posted Stories:</h2>
+          <ul>
+            {recentPosts.map((post) => {
+              return (
+                <Link to={`/blog/${post.name.urlLink}`}>
+                  <li key={post.key}>
+                    <div className="blogPreviewCard">
+                      <div>
+                        <h3>{post.name.title}</h3>
                       </div>
-                    </li>
-                  </Link>
-                );
-              })}
-            </ul>
-          </div>
+                      <div>
+                        <strong>Author:</strong> {post.name.name}
+                      </div>
+                      <div>
+                        <strong>Category:</strong> {post.name.category}
+                      </div>
+                    </div>
+                  </li>
+                </Link>
+              );
+            })}
+          </ul>
+        </div>
       </section>
     </div>
   );
