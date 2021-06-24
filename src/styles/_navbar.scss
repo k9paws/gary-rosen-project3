@@ -3,6 +3,7 @@ nav {
   position: fixed;
   width: 100%;
   border-bottom: 3px solid black;
+  z-index: 1;
 
   ul {
     display: flex;
@@ -33,6 +34,7 @@ nav {
 
     a:hover {
       background: #357b8f;
+          transition-duration: 0.3s;
     }
   }
 }
@@ -42,12 +44,4 @@ nav {
   height: 50px;
   color: $secondaryColor;
   display: flex;
-
-  span {
-    font-weight: 800;
-    width: 150px;
-    letter-spacing: 1.5px;
-    text-align: center;
-    color: $tertiaryColor;
-  }
 }
