@@ -9,10 +9,11 @@
   height: 40px;
   text-align: center;
   margin: 20px auto;
+
 }
 
 form {
-  background: #52ab98;
+  background: $primaryColor;
   border: 4px solid #000;
   border-radius: 20px;
   display: flex;
@@ -20,6 +21,13 @@ form {
   // height: 300px;
   justify-content: center;
   align-items: center;
+  margin: 40px 0;
+
+    h2 {
+    color: $tertiaryColor;
+    padding: 20px 0;
+      text-shadow: 4px 4px rgba(0, 0, 0, 0.4);
+  }
 
   input {
     width: 30%;
@@ -35,23 +43,5 @@ form {
     padding: 20px;
   }
 
-  button {
-    margin: 30px 0;
-    height: 50px;
-    width: 250px;
-    background: $tertiaryColor;
-    border: 2px solid black;
-    border-radius: 10px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 800;
-  }
 
-  button:hover {
-    background-color: $primaryColor;
-    outline: 3px solid #0d457f;
-    color: #c8d8e4;
-
-    transition-duration: 0.2s;
-  }
 }

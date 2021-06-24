@@ -32,15 +32,17 @@ const MainPage = () => {
       <header>
         <div className="headerTitle wrapper">
           <h1>Lets Discuss Dogs!</h1>
-          <h2>Dog Behaviour BLOG</h2>
+          <h2>
+            The <span>JUNO College</span> Dog Blog
+          </h2>
         </div>
       </header>
 
-      <section className="blogPostDisplay">
+      <section className="recentPostDisplaySection">
         <div className="postDisplayContainer wrapper">
-          <div>
-            <h2>Recent BLOG Posts</h2>
-          </div>
+          <h2>
+            Recent <span>DOG BLOG</span> Posts
+          </h2>
 
           <div className="blogPostContainer wrapper">
             <ul>
@@ -67,10 +69,6 @@ const MainPage = () => {
           </div>
         </div>
       </section>
-
- 
-
-
     </div>
   );
 };

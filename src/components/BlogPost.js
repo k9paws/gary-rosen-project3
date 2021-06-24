@@ -39,7 +39,9 @@ const BlogPost = () => {
       <header>
         <div className="headerTitle wrapper">
           <h1>Lets Discuss Dogs!</h1>
-          <h2>{blogPost.category} POST</h2>
+          <h2>
+            <span>{blogPost.category}</span> POST
+          </h2>
         </div>
       </header>
 
@@ -48,10 +50,17 @@ const BlogPost = () => {
 
         <h3>Author: {blogPost.name}</h3>
         <div className="blogFullPostDiv">
-          <p dangerouslySetInnerHTML={{__html: blogPost.content ? blogPost.content.replace(/\n/g, "<br />") : null }} />
+          <p
+            dangerouslySetInnerHTML={{
+              __html: blogPost.content
+                ? blogPost.content.replace(/\n/g, "<br />")
+                : null,
+            }}
+          />
         </div>
+        
       </section>
-
+      
     </div>
   );
 };

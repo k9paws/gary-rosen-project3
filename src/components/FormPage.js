@@ -59,7 +59,7 @@
     
       return (
     
-    <section className="blogPostComment" id="postForm">
+    <section className="blogPostComment">
       <div className="wrapper">
         <div className="blogForm">
           <form action="submit" onSubmit={handleSubmit}>

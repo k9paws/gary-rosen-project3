@@ -31,7 +31,9 @@ const BlogPosts = () => {
       <header>
         <div className="headerTitle wrapper">
           <h1>Lets Discuss Dogs!</h1>
-          <h2>Search All Posts</h2>
+          <h2>
+            Search <span>All Posts</span>
+          </h2>
         </div>
       </header>
       <section className="blogPostSection">
@@ -47,7 +49,7 @@ const BlogPosts = () => {
             value={categoryInput}
             className="categorySelectMenu"
           >
-            <option value="All Categories">All Categories</option>
+            <option value="">All Categories</option>
             <option value="General Knowledge">General Knowledge</option>
             <option value="Training Tools">Training Tools</option>
             <option value="Problem Behaviour">Problem Behaviour</option>
@@ -87,7 +89,6 @@ const BlogPosts = () => {
           </ul>
         </div>
       </section>
-
     </div>
   );
 };
