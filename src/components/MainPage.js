@@ -3,15 +3,6 @@ import firebase from "../config/firebase";
 import { Link } from "react-router-dom";
 
 const MainPage = () => {
-  // const [nameInput, setNameInput] = useState("");
-
-  // const [titleInput, setTitleInput] = useState("");
-
-  // const [categoryInput, setCategoryInput] = useState("General Knowledge");
-
-  // const [blogContentInput, setBlogContentInput] = useState("");
-
-  // const [blogPosts, setBlogPosts] = useState([]);
 
   const [recentPosts, setRecentPosts] = useState([]);
 
@@ -30,36 +21,11 @@ const MainPage = () => {
         });
       }
 
-      // setBlogPosts(allBlogPosts);
-
       const mostRecentPosts = allBlogPosts.slice(0, 3);
 
       setRecentPosts(mostRecentPosts);
     });
   }, []);
-
-  // // HandleSubmit for the form
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   // Firebase Code
-  //   const blogRef = firebase.database().ref();
-
-  //   const blogPostInfo = blogRef;
-
-  //   blogPostInfo.push({
-  //     name: nameInput,
-  //     title: titleInput,
-  //     category: categoryInput,
-  //     content: blogContentInput,
-  //     urlLink: `post${blogPosts.length + 1}`,
-  //   });
-
-  //   setNameInput("");
-  //   setTitleInput("");
-  //   setCategoryInput("");
-  //   setBlogContentInput("");
-  // };
 
   return (
     <div>
