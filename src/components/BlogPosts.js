@@ -36,8 +36,8 @@ const BlogPosts = () => {
           </h2>
         </div>
       </header>
-      <section className="blogPostSection">
-        <div className="blogPostContainer wrapper">
+      <section className="blogPostSection wrapper">
+        <div className="blogPostContainer">
           <h2>Search Posts by Category:</h2>
 
           <label htmlFor="blogPostCategory" className="srOnly"></label>

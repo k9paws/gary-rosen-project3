@@ -40,11 +40,11 @@ const MainPage = () => {
 
       <section className="recentPostDisplaySection">
         <div className="postDisplayContainer wrapper">
+
+          <div className="blogPostContainer">
           <h2>
             Recent <span>DOG BLOG</span> Posts
           </h2>
-
-          <div className="blogPostContainer wrapper">
             <ul>
               {recentPosts.map((post) => {
                 return (
