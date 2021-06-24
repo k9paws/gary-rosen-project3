@@ -66,6 +66,10 @@
     padding: 0 10px;
   }
 
+  .navbar {
+    text-align: center;
+  }
+
   h1 {
     padding-bottom: 60px;
     letter-spacing: 1.2px;
@@ -118,11 +122,17 @@
 
 @media (max-width: 380px) {
   .navbar {
-    padding-left: 10px;
+    padding-left: 15px;
     width: 100%;
   }
 
   .navRight {
     width: 80vw;
+  }
+
+  .blogForm {
+    h2 {
+      text-align: center;
+    }
   }
 }
