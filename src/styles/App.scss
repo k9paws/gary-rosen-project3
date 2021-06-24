@@ -30,14 +30,23 @@ button {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 800;
+    transition: all 0.2s ease-in-out;
 }
 
 button:hover {
-  background-color: $primaryColor;
+  // background-color: $secondaryColor;
   outline: 3px solid #0d457f;
-  color: #c8d8e4;
+  // color: $primaryColor;
   transition-duration: 0.2s;
+    transform: scale(1.2);
 }
+
+button:active {
+  background-color: #e27d60;
+          box-shadow: 0 5px 4px #000;
+          transform: translateY(2px);
+}
+
 
 .wrapper {
   max-width: 1300px;
@@ -210,7 +219,6 @@ h5 {
   padding: 30px 0;
 }
 
-
 // All BLOG Posts Styling
 
 .categorySelectMenu {
@@ -236,7 +244,7 @@ h5 {
 
   h2 {
     font-size: 3rem;
-    padding: 80px 0 50px 0;
+    padding: 10px 0 50px 0;
   }
 
   h3 {
