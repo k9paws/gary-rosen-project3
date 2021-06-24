@@ -5,7 +5,6 @@
 @import "navbar";
 @import "newPost";
 
-
 * {
   margin: 0;
   padding: 0;
@@ -31,13 +30,21 @@ button {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 800;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover {
-  background-color: $primaryColor;
+  // background-color: $secondaryColor;
   outline: 3px solid #0d457f;
-  color: #c8d8e4;
+  // color: $primaryColor;
   transition-duration: 0.2s;
+  transform: scale(1.2);
+}
+
+button:active {
+  background-color: #e27d60;
+  box-shadow: 0 5px 4px #000;
+  transform: translateY(2px);
 }
 
 .wrapper {
@@ -109,8 +116,9 @@ h5 {
 // RECENT POSTS SECTION STYLING
 
 .recentPostDisplaySection {
-  background: $secondaryColor;
-  height: 100vh;
+  background: #c5c3c3;
+  // height: 100vh;
+  padding: 50px 0;
 
   h2 {
     text-align: center;
@@ -127,10 +135,11 @@ h5 {
   flex-direction: column;
   background: $primaryColor;
   padding: 50px;
-  margin: 30px auto;
   border-radius: 20px;
   border: 3px solid black;
-  min-height: 60vh;
+  min-height: 40vh;
+  position: relative;
+  top: -150px;
 
   ul {
     display: flex;
@@ -157,6 +166,10 @@ h5 {
 }
 
 // POST PREVIEW CARD STYLING
+.blogPostSection {
+  background: #c5c3c3;
+  padding: 50px 0;
+}
 
 .blogPreviewCard {
   background: $secondaryColor;
@@ -205,25 +218,6 @@ h5 {
   }
 }
 
-.postDisplayContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 30px 0;
-}
-
-.blogPostComment {
-  background: url(../assets/blogFormImage3.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 50px 0;
-  border-bottom: 4px solid black;
-  border-top: 4px solid black;
-
-  h2 {
-    padding: 40px 0;
-  }
-}
-
 // All BLOG Posts Styling
 
 .categorySelectMenu {
@@ -235,6 +229,10 @@ h5 {
 
 // BLOG FULL POST STYLING
 
+.fullPostSection {
+  background: #c5c3c3;
+}
+
 .blogFullPostDisplay {
   background: $secondaryColor;
   display: flex;
@@ -243,13 +241,14 @@ h5 {
   border: 2px solid black;
   padding: 50px;
   border-radius: 20px;
+  margin: 0 auto;
   position: relative;
   top: -100px;
   box-shadow: 10px 10px 20px 20px #aaaaaa;
 
   h2 {
     font-size: 3rem;
-    padding: 80px 0 50px 0;
+    padding: 10px 0 50px 0;
   }
 
   h3 {

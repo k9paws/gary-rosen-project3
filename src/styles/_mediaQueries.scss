@@ -1,0 +1,128 @@
+@media (max-width: 1280px) {
+  header {
+    padding: 0 50px;
+  }
+  nav {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  header {
+    height: 60vh;
+  }
+
+  .headerTitle {
+    padding-top: 20vh;
+  }
+
+  .navRight {
+    width: 80%;
+  }
+
+  .navLeft {
+    padding-left: 20px;
+  }
+
+  .blogPreviewCard {
+    margin: 10px;
+  }
+
+  .categorySelectMenu {
+    width: 50%;
+  }
+
+  .blogFullPostDisplay {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerTitle {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding-top: 0;
+  }
+
+  .blogForm {
+    width: 90%;
+  }
+
+  .postFormDropDown,
+  .formInput {
+    width: 50%;
+  }
+
+  .formTextArea {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 100vh;
+    background-position-x: -80px;
+    padding: 0 10px;
+  }
+
+  h1 {
+    padding-bottom: 60px;
+    letter-spacing: 1.2px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    letter-spacing: 1.2px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.9);
+  }
+
+  .headerTitle {
+    padding-top: 30%;
+  }
+
+  .navLeft {
+    display: none;
+  }
+
+  .navRight {
+    width: 100%;
+  }
+
+  .fullPostSection {
+    padding: 30px 0;
+  }
+
+  .blogPostContainer,
+  .blogFullPostDisplay {
+    position: static;
+  }
+
+  .categorySelectMenu {
+    width: 90%;
+  }
+
+  .formInput,
+  .postFormDropDown {
+    width: 90%;
+  }
+
+  button {
+    width: 90%;
+  }
+
+  .blogFullPostDisplay {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar {
+    padding-left: 10px;
+    width: 100%;
+  }
+
+  .navRight {
+    width: 80vw;
+  }
+}
