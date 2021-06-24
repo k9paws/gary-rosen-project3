@@ -5,6 +5,7 @@ import BlogPosts from "./BlogPosts";
 import NavBar from "./Navbar";
 import BlogPost from "./BlogPost";
 import Footer from "./Footer";
+import FormPage from "./FormPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route exact path="/blog/:postNum" render={() => <BlogPost />} />
       <Route exact path="/" render={() => <MainPage />} />
       <Route path="/" render={() => <Footer />} />
+      <Route exact path="/form" render={() => <FormPage />} />
     </div>
   );
 }

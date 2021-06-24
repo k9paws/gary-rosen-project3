@@ -20,20 +20,21 @@ const Navbar = () => {
                 <li>All Posts</li>
               </Link>
 
-              {/\d/.test(urlLink) ? null : (
+              {/* {/\d/.test(urlLink) ? null : ( */}
+
+                  <Link to={`/form`}>
                 <li>
-                  <a href="#postForm">
                     <span>NEW POST</span>
-                  </a>
                 </li>
-              )}
+                  </Link>
+              {/* )} */}
             </ul>
           </div>
 
-          <div className="navRight">
+          {/* <div className="navRight">
             <label htmlFor="navSearchBar"></label>
             <input type="text" placeholder="Search Blog Posts"></input>
-          </div>
+          </div> */}
         </div>
       </nav>
     </div>
